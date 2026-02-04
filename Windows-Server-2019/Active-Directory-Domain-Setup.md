@@ -21,6 +21,11 @@ Set up a Windows Server 2019 domain controller and configure Active Directory Do
 - Windows Server 2019
 - Active Directory Domain Services
 
+## Screenshot
+
+![Active Directory Users and Computers](ad-domain-users-and-computers.png)
+
+
 ## Result
 Successfully deployed a functional Active Directory domain, enabling centralized authentication and user management for a Windows environment.
 
