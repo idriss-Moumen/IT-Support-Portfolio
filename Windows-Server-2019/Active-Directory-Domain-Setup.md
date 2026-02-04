@@ -23,7 +23,7 @@ Set up a Windows Server 2019 domain controller and configure Active Directory Do
 
 ## Screenshot
 
-![Active Directory Users and Computers](ad-domain-users-and-computers.png)
+![Active Directory Users and Computers](ad-users-and-computers.png)
 
 
 ## Result
