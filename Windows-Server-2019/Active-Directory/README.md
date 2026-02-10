@@ -23,7 +23,8 @@ Set up a Windows Server 2019 domain controller and configure Active Directory Do
 
 ## Screenshot
 
-![Active Directory Users and Computers](ad-users-and-computers.png)
+![AD Users](Screenshots/ad-users-and-computers.png)
+
 
 
 ## Result
@@ -65,13 +66,13 @@ Verified domain resolution using nslookup
 ## Screenshots
 
 ### Windows 10 joined to domain
-![Domain Joined](win10-domain-joined.png)
+![Windows 10 Domain Joined](Screenshots/win10-domain-joined.png)
 
 ### Domain authentication screen
-![Domain Login](win10-domain-login.png)
+![Windows 10 Domain Login](Screenshots/win10-domain-login.png)
 
 ### DNS resolution verification
-![DNS Test](dns-resolution-test.png)
+![DNS Resolution Test](Screenshots/dns-resolution-test.png)
 
 
 Result
