@@ -23,6 +23,19 @@ The policies were applied to the **HR Organizational Unit (OU)** to simulate rea
 
 ---
 
+## GPO Security Filtering and Delegation
+
+Each Group Policy Object was reviewed to ensure correct security filtering and delegation settings.
+
+- **Authenticated Users** have read permissions, allowing the policy to apply to users in scope
+- **Domain Admins**, **Enterprise Admins**, and **SYSTEM** retain full control
+- No unnecessary permissions are granted
+- Inheritance is explicitly managed per GPO
+
+This confirms that policies are applied intentionally and follow least-privilege principles.
+
+![GPO Delegation](Screenshots/gpo-delegation-removing-folder-options.png)
+
 ## Implemented Group Policies
 
 ### 1. Disable Command Prompt (User Policy)
