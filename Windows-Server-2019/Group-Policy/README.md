@@ -1,26 +1,47 @@
 # Group Policy Labs (Windows Server 2019)
 
 ## Lab Overview
+This lab demonstrates the use of Group Policy Objects (GPOs) to control user behavior and system access in a Windows Server 2019 Active Directory environment.
+
+The policies were applied to the **HR Organizational Unit (OU)** to simulate real-world user restrictions commonly used in enterprise environments.
+
+---
+
+## Environment
 - Platform: VMware Workstation
+- Server OS: Windows Server 2019
+- Client OS: Windows 10
 - Domain: IDRISS.LOCAL
-- Goal: Apply and verify Group Policy for user and computer restrictions in a domain environment.
 
-## GPOs Implemented
+---
 
-### User Configuration (User Policies)
+## GPO Design and Scope
+- GPOs are linked to the **HR OU**
+- User Configuration policies apply to HR users regardless of the computer used
+- Computer Configuration policies apply to domain-joined machines
+- Policy inheritance and scope were verified using Group Policy Management Console (GPMC)
+
+---
+
+## Implemented Group Policies
+
+### 1. Disable Command Prompt (User Policy)
+Command Prompt access was disabled to prevent users from executing command-line tools.
+
+**Policy used:**
+- User Configuration → Administrative Templates → System  
 - Prevent access to the command prompt
-- Disable Folder Options / File Explorer Options
-- Show only specified Control Panel items (Fonts)
 
-### Computer Configuration (Computer Policies)
-- Removable Storage Access: deny read/write/execute
-- Startup script: add a domain group/user to local Administrators (optional)
+**Result:**
+Users receive a message indicating that Command Prompt has been disabled by the administrator.
 
-## Verification
-- `gpupdate /force`
-- `gpresult /r` (screenshots)
+![CMD Disabled](Screenshots/client-cmd-disabled.png)
 
-## Notes / Lessons Learned
-- LSDOU order
-- GPO refresh: 90 minutes + random offset
-- Common troubleshooting: DNS/DHCP/APIPA impact on domain reachability
+---
+
+### 2. Restrict Control Panel to Fonts Only (User Policy)
+Control Panel access was restricted so users can only access the Fonts applet.
+
+**Policy used:**
+- User Configuration → Administrative Templates → Control Panel  
+- Show only specified Control Panel ite
