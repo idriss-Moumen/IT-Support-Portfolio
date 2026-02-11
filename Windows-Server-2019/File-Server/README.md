@@ -148,5 +148,42 @@ Successfully deployed a secure HR file server using:
 - Controlled access with granular NTFS permissions
 - Client-side verification
 
+  ---
+
+# 📊 Disk Quota Configuration (Volume Level)
+
+## 🎯 Objective
+
+Prevent users from consuming excessive disk space on the file server.
+
+Configured NTFS Disk Quotas on volume:
+
+E:\
+
+---
+
+## ⚙ Configuration Details
+
+Enabled:
+
+✔ Enable quota management  
+✔ Deny disk space to users exceeding quota limit  
+
+Configured limits:
+
+| Setting | Value |
+|----------|--------|
+| Quota Limit | 2 GB per user |
+| Warning Level | 1 GB |
+
+This means:
+
+- User receives a warning when usage reaches 1 GB
+- User cannot store additional data after reaching 2 GB
+
+📸 Screenshot:
+
+![Quota Configuration](Screenshots/quota-volume.png)
+
 This lab demonstrates practical system administration and enterprise file server management skills.
 
