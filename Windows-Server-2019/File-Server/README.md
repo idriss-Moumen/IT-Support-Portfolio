@@ -242,6 +242,87 @@ When an HR user logs in:
 - Enterprise usability optimization
 - Centralized user configuration management
 
+---
+
+# 🕒 Shadow Copies Configuration (Previous Versions)
+
+## 🎯 Objective
+
+Enable automatic file recovery for users without restoring from full backup.
+
+Shadow Copies allow users to:
+
+- Restore previous versions of files
+- Recover deleted files
+- Restore overwritten documents
+- Reduce helpdesk workload
+
+Configured on volume:
+
+E:\
+
+---
+
+## ⚙ Configuration Details
+
+### 1️⃣ Enabled Shadow Copies
+
+Enabled Shadow Copies on volume:
+
+E:\
+
+Storage area configured on:
+
+W:\ (separate volume for snapshot storage)
+
+This prevents snapshot data from consuming production volume space.
+
+📸 Screenshot:
+
+![Shadow Copy Settings](Screenshots/ShadowCopy.png)
+
+---
+
+### 2️⃣ Schedule Configuration
+
+Configured automatic snapshots:
+
+- Every 8 minutes
+- Starting at 7:00 AM
+- Monday to Friday
+
+This ensures multiple recovery points during business hours.
+
+📸 Screenshot:
+
+![Shadow Copy Schedule](Screenshots/ShadowCopyTiming.png)
+
+---
+
+## 🧠 Concepts Demonstrated
+
+- Volume Shadow Copy Service (VSS)
+- Snapshot-based file recovery
+- Business-hour backup scheduling
+- Separation of storage and snapshot volume
+- Disaster recovery fundamentals
+
+---
+
+## ✅ Result
+
+Users can:
+
+- Right-click a file
+- Go to "Previous Versions"
+- Restore earlier versions without IT intervention
+
+This significantly improves:
+
+- Data protection
+- User autonomy
+- Operational efficiency
+
 
 This lab demonstrates practical system administration and enterprise file server management skills.
 
