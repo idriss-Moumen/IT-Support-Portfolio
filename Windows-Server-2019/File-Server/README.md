@@ -185,5 +185,63 @@ This means:
 
 ![Quota Configuration](Screenshots/quota-volume.png)
 
+## 🗂 Step 6 – Drive Mapping via Group Policy (GPO)
+
+### 🎯 Objective
+
+Automatically map the HR shared folder for HR users upon login.
+
+This removes the need for users to manually access:
+
+\\idriss\HR
+
+---
+
+### ⚙ GPO Configuration Path
+
+User Configuration  
+→ Preferences  
+→ Windows Settings  
+→ Drive Maps  
+
+---
+
+### 🔧 Settings Applied
+
+| Setting | Value |
+|----------|--------|
+| Action | Update |
+| Location | \\idriss\HR |
+| Drive Letter | M: |
+| Security Filtering | HR Security Group |
+
+---
+
+### 🖥 Result on Client Machine
+
+When an HR user logs in:
+
+- M: drive appears automatically
+- Folder shows under Network Locations
+- No manual configuration required
+- Access follows NTFS + Share permissions
+
+📸 Screenshots:
+
+![Drive Mapping GPO](Screenshots/ThemappingFolder.png)
+
+![Mapped Drive on Client](Screenshots/MappedThefolder.png)
+
+---
+
+## 🧠 Concepts Demonstrated
+
+- Group Policy Preferences
+- Drive mapping automation
+- Security group-based targeting
+- Enterprise usability optimization
+- Centralized user configuration management
+
+
 This lab demonstrates practical system administration and enterprise file server management skills.
 
