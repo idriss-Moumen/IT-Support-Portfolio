@@ -323,6 +323,122 @@ This significantly improves:
 - User autonomy
 - Operational efficiency
 
+# 📂 File Server Resource Manager (FSRM) Configuration
+
+## 🎯 Objective
+
+Enhance file server control using **File Server Resource Manager (FSRM)** to:
+
+- Control storage usage per folder
+- Restrict specific file types
+- Enforce enterprise-level storage policies
+
+---
+
+# 🛠 Step 1 – Install File Server Resource Manager
+
+Installed role via:
+
+Server Manager → Add Roles and Features →  
+File and Storage Services → File Server Resource Manager
+
+📸 Screenshot:
+
+![FSRM Installation](Screenshots/InstallFileRessourceManger.png)
+
+---
+
+# 📊 Step 2 – Folder-Based Quota (Advanced Control)
+
+Instead of applying quotas at the volume level only, configured **quota specifically on the HR folder**:
+
+Quota path:
+
+E:\HR
+
+Configured:
+
+| Setting | Value |
+|----------|--------|
+| Quota Type | Hard Quota |
+| Limit | 5 GB |
+| Auto Apply | Applied to subfolders |
+| Notifications | Enabled |
+
+This ensures:
+
+- Storage control per department
+- Prevents uncontrolled data growth
+- Better scalability than volume-level quotas
+
+📸 Screenshot:
+
+![Folder Quota](Screenshots/FolderQuota.png)
+
+📸 Result:
+
+![Folder Quota Result](Screenshots/FolderQuotaResult.png)
+
+---
+
+# 🚫 Step 3 – File Screening (File Type Restriction)
+
+Configured File Screen on:
+
+E:\HR
+
+Blocking file types:
+
+- Audio files
+- Video files
+- Text files (custom configuration)
+
+Screening Type:
+
+Active (blocks file creation)
+
+This prevents:
+
+- Non-business files from being stored
+- Unnecessary storage consumption
+- Policy violations
+
+📸 Screenshot:
+
+![File Screen Configuration](Screenshots/FileScreen.png)
+
+📸 Result (Access Denied when uploading blocked file):
+
+![File Screen Result](Screenshots/FileScreeningResult.png)
+
+---
+
+# 📈 Enterprise Concepts Demonstrated
+
+- Role-based File Server architecture
+- FSRM implementation
+- Folder-level quota management
+- Hard vs Soft quota understanding
+- File type restriction enforcement
+- Centralized storage governance
+
+---
+
+# ✅ Result
+
+The HR file share now includes:
+
+- RAID-5 storage redundancy
+- Secure AD-based access control
+- Granular NTFS permissions
+- Volume-level quota
+- Folder-level quota (FSRM)
+- File screening policies
+- Drive mapping via GPO
+- Shadow copy recovery support
+
+This simulates a production-ready enterprise file server design.
+
 
 This lab demonstrates practical system administration and enterprise file server management skills.
 
