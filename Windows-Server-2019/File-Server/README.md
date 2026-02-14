@@ -485,23 +485,7 @@ Important design:
 
 ---
 
-## 📡 Step 3 – Share the Folder (Hidden Share)
-
-Shared folder as:
-
-\\idriss\Home$
-
-The `$` makes the share hidden.
-
-Meaning:
-
-- It will not appear in network browsing
-- Users must access it directly or via mapping
-- Improves security and reduces visibility
-
----
-
-## 👤 Step 4 – Configure User Home Folder in Active Directory
+## 👤 Step 3 – Configure User Home Folder in Active Directory
 
 In Active Directory:
 
