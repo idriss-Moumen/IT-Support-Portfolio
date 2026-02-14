@@ -439,6 +439,129 @@ The HR file share now includes:
 
 This simulates a production-ready enterprise file server design.
 
+---
+
+# 🏠 Home Folder Configuration (Per-User Private Storage)
+
+## 🎯 Objective
+
+Configure secure per-user Home Folders that:
+
+- Automatically create a personal folder for each user
+- Map automatically as H: drive at logon
+- Prevent users from accessing other users’ folders
+- Use hidden share for security best practice
+
+---
+
+## 🧱 Step 1 – Create Root Home Folder
+
+Created root folder on volume:
+
+E:\Home
+
+---
+
+## 🔐 Step 2 – Configure NTFS Permissions (Root Level)
+
+Configured root permissions as follows:
+
+| Principal | Permission |
+|------------|------------|
+| Administrators | Full Control |
+| SYSTEM | Full Control |
+| CREATOR OWNER | Full Control (Subfolders only) |
+| Domain Users | Read & Execute (This folder only) |
+
+Important design:
+
+- Domain Users can see the Home folder
+- Users cannot open other users’ folders
+- CREATOR OWNER ensures user becomes owner of their own folder
+
+📸 Screenshot:
+
+![Home Root Permissions](Screenshots/home-root-permissions.png)
+
+---
+
+## 📡 Step 3 – Share the Folder (Hidden Share)
+
+Shared folder as:
+
+\\idriss\Home$
+
+The `$` makes the share hidden.
+
+Meaning:
+
+- It will not appear in network browsing
+- Users must access it directly or via mapping
+- Improves security and reduces visibility
+
+---
+
+## 👤 Step 4 – Configure User Home Folder in Active Directory
+
+In Active Directory:
+
+Profile tab → Home folder:
+
+Connect:
+H:
+
+To:
+\\idriss\Home$\%username%
+
+This automatically:
+
+- Creates folder with username
+- Assigns proper permissions
+- Maps it as H: drive at logon
+
+📸 Screenshot:
+
+![AD Home Folder Config](Screenshots/home-folder-ad-config.png)
+
+---
+
+## 🖥 Step 5 – Client Verification
+
+Logged in as user:
+
+✔ H: drive automatically mapped  
+✔ Folder created automatically  
+✔ User cannot access other users' folders  
+✔ Proper isolation confirmed  
+
+📸 Screenshot:
+
+![Client Home Drive](Screenshots/home-drive-client.png)
+
+---
+
+## 🧠 Concepts Demonstrated
+
+- Home folder automation
+- NTFS permission hierarchy
+- CREATOR OWNER usage
+- Hidden share configuration
+- Secure user isolation
+- Enterprise file server best practices
+
+---
+
+## ✅ Result
+
+Successfully deployed secure per-user home directories with:
+
+- Automatic folder creation
+- Automatic drive mapping
+- Hidden administrative share
+- Proper NTFS isolation model
+
+This simulates real enterprise domain environments.
+
 
 This lab demonstrates practical system administration and enterprise file server management skills.
 
