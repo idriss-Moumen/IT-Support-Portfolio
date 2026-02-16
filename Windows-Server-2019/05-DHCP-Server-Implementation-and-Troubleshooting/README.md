@@ -30,7 +30,7 @@ The objectives of this lab were:
 
 The DHCP role was installed using Server Manager and the post-install configuration was completed.
 
-![DHCP Installation](Screenshots/01-DHCP-Installation.png)
+![DHCP Installation](Screenshots/DHCP-Installation.png)
 
 ---
 
@@ -42,7 +42,7 @@ The scope was initially configured incorrectly as:
 
 Because of this mismatch, the DHCP server could not issue valid IP addresses.
 
-![Wrong Scope](Screenshots/02-DHCP-Wrong-Scope-196-Network.png)
+![Wrong Scope](Screenshots/DHCP-Wrong-Scope-196-Network.png)
 
 ---
 
@@ -54,7 +54,7 @@ The incorrect scope was deleted and recreated correctly as:
 
 Scope was activated successfully.
 
-![Correct Scope](Screenshots/03-DHCP-Correct-Scope-192-Network.png)
+![Correct Scope](Screenshots/DHCP-Correct-Scope-192-Network.png)
 
 ---
 
@@ -66,7 +66,7 @@ Due to the incorrect scope configuration, the client received an APIPA address:
 
 This indicates that no DHCP server responded to the DHCP request.
 
-![APIPA Wrong Scope](Screenshots/04-Client-APIPA-Wrong-Scope.png)
+![APIPA Wrong Scope](Screenshots/Client-APIPA-Wrong-Scope.png)
 
 ---
 
@@ -74,11 +74,11 @@ This indicates that no DHCP server responded to the DHCP request.
 
 After correcting the scope configuration, the client successfully received an IP address from the DHCP server.
 
-![DHCP Success](Screenshots/05-Client-DHCP-Lease-Success.png)
+![DHCP Success](Screenshots/Client-DHCP-Lease-Success.png)
 
 Lease verified in DHCP console:
 
-![Lease Console](Screenshots/06-DHCP-Address-Lease-Console.png)
+![Lease Console](Screenshots/DHCP-Address-Lease-Console.png)
 
 ---
 
@@ -86,11 +86,11 @@ Lease verified in DHCP console:
 
 A DHCP reservation was created to assign a fixed IP address to a specific client based on its MAC address.
 
-![Reservation](Screenshots/07-DHCP-Reservation-Configuration.png)
+![Reservation](Screenshots/DHCP-Reservation-Configuration.png)
 
 The client successfully received the reserved IP address after renewal:
 
-![Reserved IP](Screenshots/10-Client-Reserved-IP-Verification.png)
+![Reserved IP](Screenshots/Client-Reserved-IP-Verification.png)
 
 ---
 
@@ -98,11 +98,11 @@ The client successfully received the reserved IP address after renewal:
 
 The client MAC address was added to the DHCP Deny filter list to test restriction behavior.
 
-![Deny Filter](Screenshots/08-DHCP-Deny-Filter-Configuration.png)
+![Deny Filter](Screenshots/DHCP-Deny-Filter-Configuration.png)
 
 After applying the deny filter, the client failed to receive an IP address and was assigned an APIPA address:
 
-![APIPA Deny](Screenshots/09-Client-APIPA-Deny-Filter.png)
+![APIPA Deny](Screenshots/Client-APIPA-Deny-Filter.png)
 
 ---
 
