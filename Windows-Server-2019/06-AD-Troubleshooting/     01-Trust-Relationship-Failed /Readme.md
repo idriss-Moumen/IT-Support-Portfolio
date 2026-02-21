@@ -1,83 +1,68 @@
-# Active Directory Lab – Trust Relationship Failure (Windows 11)
+# Trust Relationship Failed – Windows 11 Domain Workstation
 
-## Overview
-This lab demonstrates how to reproduce and resolve the error:
+## Issue Description
 
-"The trust relationship between this workstation and the primary domain failed."
+User reported inability to log into domain account on a Windows 11 workstation.
 
-Environment:
-- Domain: idriss.local
-- Domain Controller: Windows Server (AD DS)
-- Client: Windows 11 (Domain Joined)
+**Error displayed:**
 
----
+> "The trust relationship between this workstation and the primary domain failed."
 
-## Problem
-User unable to log in using domain credentials.
-Error displayed during login:
-"The trust relationship between this workstation and the primary domain failed."
-
-Screenshot:
-Screenshots/01-trust-error.png
+Machine was previously joined to domain: **idriss.local**  
+User unable to access network resources.
 
 ---
 
 ## Root Cause
-Resetting the computer account in Active Directory invalidates the secure channel password stored in AD.
-The workstation still stores the old machine account password locally.
-This mismatch breaks the trust relationship between the workstation and the domain controller.
 
----
+A machine account secure channel password mismatch occurred between the workstation and Active Directory.
 
-## Reproduction
-1. Opened Active Directory Users and Computers.
-2. Reset the computer account.
-3. Restarted client machine.
-4. Attempted domain login.
-5. Error reproduced successfully.
+When the computer account password stored locally does not match the password stored in AD, the secure channel breaks and domain authentication fails.
 
 ---
 
 ## Resolution (Method Used)
 
-1. Logged in using local administrator account.
-2. Removed workstation from domain and joined temporary workgroup.
-3. Rebooted system.
-4. Rejoined workstation to domain using domain admin credentials.
-5. Rebooted again.
+1. Logged in using local administrator account.  
+2. Removed workstation from domain and joined a temporary workgroup.  
+3. Rebooted the workstation.  
+4. Rejoined workstation to domain **idriss.local** using domain admin credentials.  
+5. Rebooted again.  
 6. Verified domain login successful.
 
-Screenshots:
-### Screenshot – Trust Relationship Error
+---
+
+## Screenshots
+
+### 1) Trust Relationship Error
 ![Trust Error](Screenshots/01-trust-error.png)
 
-### Screenshot – Join Workgroup
+### 2) Join Temporary Workgroup
 ![Join Workgroup](Screenshots/03-join-workgroup.png)
 
-### Screenshot – Rejoin Domain
+### 3) Rejoin Domain
 ![Rejoin Domain](Screenshots/04-rejoin-domain.png)
 
+### 4) Domain Login Verified
+
+Command used:
+
+```cmd
+whoami
+```
+
+Output:
+
+```cmd
+idriss0\mohammed.zondy
+```
+
+![Domain Login Success](Screenshots/05-domain-login-success.png)
+
 ---
 
-## Verification
-- Domain login successful.
-- Trust relationship restored.
-- User able to access domain resources.
+## Jira Ticket (ITSM Documentation)
 
----
+This incident was documented in Jira using a Kanban workflow:
 
-## ITSM Documentation
-Incident documented in Jira using Kanban workflow:
-To Do → In Progress → Resolved.
-
-See:
-jira/jira-ticket-kan-5.png
-
----
-
-## Key Concepts Learned
-- Machine account password
-- Secure channel between workstation and DC
-- Trust relationship failure
-- Active Directory troubleshooting
-- IT documentation and workflow management
+To Do → In Progress → Resolved
