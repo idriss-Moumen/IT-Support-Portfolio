@@ -66,3 +66,13 @@ idriss0\mohammed.zondy
 This incident was documented in Jira using a Kanban workflow:
 
 To Do → In Progress → Resolved
+
+### 5) Jira Ticket – Created (To Do Status)
+![Jira Ticket To Do](Screenshots/06-jira-ticket-todo.png)
+
+### 6) Jira Ticket – In Progress
+![Jira Ticket In Progress](Screenshots/07-jira-ticket-inprogress.png)
+
+### 8) Jira Ticket – Resolved Status
+![Jira Ticket Resolved](Screenshots/08-jira-ticket-resolved.png)
+
