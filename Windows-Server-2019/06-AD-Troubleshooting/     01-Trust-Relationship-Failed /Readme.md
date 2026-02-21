@@ -48,9 +48,14 @@ This mismatch breaks the trust relationship between the workstation and the doma
 6. Verified domain login successful.
 
 Screenshots:
-- Screenshots/03-join-workgroup.png
-- Screenshots/04-rejoin-domain.png
-- Screenshots/05-domain-success.png
+### Screenshot – Trust Relationship Error
+![Trust Error](Screenshots/01-trust-error.png)
+
+### Screenshot – Join Workgroup
+![Join Workgroup](Screenshots/03-join-workgroup.png)
+
+### Screenshot – Rejoin Domain
+![Rejoin Domain](Screenshots/04-rejoin-domain.png)
 
 ---
 
