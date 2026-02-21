@@ -18,7 +18,7 @@ Error displayed during login:
 "The trust relationship between this workstation and the primary domain failed."
 
 Screenshot:
-screenshots/01-trust-error.png
+Screenshots/01-trust-error.png
 
 ---
 
@@ -48,9 +48,9 @@ This mismatch breaks the trust relationship between the workstation and the doma
 6. Verified domain login successful.
 
 Screenshots:
-- screenshots/03-join-workgroup.png
-- screenshots/04-rejoin-domain.png
-- screenshots/05-domain-success.png
+- Screenshots/03-join-workgroup.png
+- Screenshots/04-rejoin-domain.png
+- Screenshots/05-domain-success.png
 
 ---
 
