@@ -57,7 +57,7 @@ Output:
 idriss0\mohammed.zondy
 ```
 
-![Domain Login Success](Screenshots/05-domain-login-success.png)
+![Domain Login Success](Screenshots/05-domain-success.png)
 
 ---
 
