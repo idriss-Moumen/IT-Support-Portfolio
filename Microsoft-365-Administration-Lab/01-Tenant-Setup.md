@@ -40,10 +40,13 @@ In this lab, a **cloud-only identity model** is used:
 
 ---
 
-## Screenshots to Include
+## Screenshots
 
-Add the following screenshots inside the `Screenshots/` folder:
+### Admin Center Homepage
+![Admin Center](Screenshots/01-Tenant-Setup/01-admin-center-home.png)
 
-- Tenant domain confirmation
-- Microsoft 365 Admin Center homepage
-- Active Users view showing Global Administrator account
+### Active Users Overview
+![Active Users](Screenshots/01-Tenant-Setup/02-active-users-overview.png)
+
+### Global Administrator Role Confirmation
+![Global Admin Role](Screenshots/01-Tenant-Setup/03-global-admin-role.png)
