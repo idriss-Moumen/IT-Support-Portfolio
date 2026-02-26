@@ -1,45 +1,49 @@
-# Microsoft 365 Administration Lab
+# 01 - Tenant Setup
 
-## Overview
-This lab documents hands-on administrative tasks performed in a Microsoft 365 cloud tenant. The goal was to simulate real-world enterprise scenarios including user onboarding, license management, role delegation, shared mailbox configuration, and offboarding workflow procedures.
-
-The lab was performed in a cloud-only environment using Entra ID and Exchange Online.
+## Objective
+To create and configure a Microsoft 365 cloud tenant and gain access to the Microsoft 365 Admin Center.
 
 ---
 
-## Environment
+## Steps Performed
 
-- Microsoft 365 Business Standard (Trial Tenant)
-- Entra ID (Azure AD)
-- Exchange Online
-- Microsoft 365 Admin Center
-
-Tenant Domain:
-`idrisslabs.onmicrosoft.com`
-
----
-
-## Skills Demonstrated
-
-- Tenant creation and initial configuration
-- User provisioning in Entra ID
-- License assignment and validation of service provisioning
-- License removal and verification of mailbox service impact
-- Role-Based Access Control (User Administrator role assignment)
-- Shared mailbox creation and member assignment
-- Mailbox permission configuration (Full Access and Send As)
-- User offboarding workflow simulation:
-  - Block sign-in
-  - Convert mailbox to shared
-  - License removal
-- Understanding of cloud identity vs traditional on-prem Active Directory
+1. Signed up for a Microsoft 365 Business Standard trial.
+2. Created a new tenant with the domain:
+   `idrisslabs.onmicrosoft.com`
+3. Completed the initial setup wizard.
+4. Logged into the Microsoft 365 Admin Center.
+5. Verified Global Administrator access.
 
 ---
 
-## Key Learning Outcomes
+## Observations
 
-- How Microsoft 365 licensing controls service provisioning
-- Differences between User Mailboxes and Shared Mailboxes
-- Delegated access vs password sharing
-- Role-based access design using least privilege principles
-- Architecture differences between Azure AD Join and traditional Domain Join
+- The tenant was provisioned automatically by Microsoft.
+- Exchange Online services were enabled by default with the assigned license.
+- The initial account created during setup was assigned the Global Administrator role.
+- The Microsoft 365 Admin Center provides centralized access to:
+  - Users
+  - Roles
+  - Licenses
+  - Exchange
+  - Security settings
+
+---
+
+## Architecture Notes
+
+In this lab, a **cloud-only identity model** is used:
+
+- Entra ID acts as the identity provider.
+- No on-prem Active Directory server is connected.
+- Authentication and service access are fully cloud-managed.
+
+---
+
+## Screenshots to Include
+
+Add the following screenshots inside the `Screenshots/` folder:
+
+- Tenant domain confirmation
+- Microsoft 365 Admin Center homepage
+- Active Users view showing Global Administrator account
