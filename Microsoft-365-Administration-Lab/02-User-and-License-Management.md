@@ -72,4 +72,32 @@ These tasks simulate common Level 1 / Level 1.5 IT Support responsibilities incl
 
 ## Screenshots
 
-(Insert screenshots inside the Screenshots/02-User-and-License-Management folder)
+### 1️⃣ User Provisioning – Entra ID
+
+![User Created](Screenshots/02-User-and-License-Management/01-user-created.png)
+
+A new cloud user was successfully created in Entra ID and added to Active Users.
+
+---
+
+### 2️⃣ License Assignment – Microsoft 365 Business Standard
+
+![License Assigned](Screenshots/02-User-and-License-Management/02-license-assigned.png)
+
+Microsoft 365 Business Standard license assigned to the user, triggering service provisioning (Exchange Online, OneDrive, etc.).
+
+---
+
+### 3️⃣ License Removal – Exchange Online Dependency
+
+![License Removed](Screenshots/02-User-and-License-Management/03-license-removed-mailbox-error.png)
+
+After removing the Exchange Online license, mailbox access was disabled, demonstrating license-based service dependency.
+
+---
+
+### 4️⃣ Access Control – Block Sign-In
+
+![Block Sign-In](Screenshots/02-User-and-License-Management/04-block-sign-in.png)
+
+User sign-in was blocked without deleting the account, simulating a secure offboarding scenario.
